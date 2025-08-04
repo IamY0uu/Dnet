@@ -40,7 +40,6 @@ pipeline {
 
         stage('Deploy App (Local)') {
             steps {
-                // Stop existing process (if any) and restart
                 sh '''
                 pkill -f "dotnet" || true
                 nohup dotnet publish_output/SampleDotNetApp.dll > app.log 2>&1 &
