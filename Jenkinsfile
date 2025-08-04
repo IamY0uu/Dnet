@@ -20,15 +20,16 @@ pipeline {
 
         stage('Restore Dependencies') {
             steps {
-                sh 'dotnet restore'
+                sh 'dotnet restore SampleDotNetApp/SampleDotNetApp.csproj'
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                sh 'dotnet build SampleDotNetApp/SampleDotNetApp.csproj --configuration Release'
             }
         }
 
-        stage('Build App') {
-            steps {
-                sh 'dotnet build --configuration Release'
-            }
-        }
 
         stage('Publish App') {
             steps {
