@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/IamY0uu/Dnet.git'
+                git branch: 'main', url: 'https://github.com/IamY0uu/Dnet.git'
             }
         }
 
