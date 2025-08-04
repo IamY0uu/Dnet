@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        dotnet "dotnet-8.0" // or 7.0, based on your Jenkins config
+        dotnetsdk "dotnet-8.0" // or 7.0, based on your Jenkins config
     }
 
     environment {
