@@ -33,9 +33,10 @@ pipeline {
 
         stage('Publish App') {
             steps {
-                sh 'dotnet publish -c Release -o publish_output'
+                sh 'dotnet publish SampleDotNetApp/SampleDotNetApp.csproj -c Release -o publish_output'
             }
         }
+
 
         stage('Deploy App (Local)') {
             steps {
